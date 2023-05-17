@@ -1,0 +1,32 @@
+{% extends "navigation.bar.html.twig" %}
+
+    {% block head %}
+        {{ parent() }}
+    {% endblock %}
+    {% block content %}
+        {% block javascripts %}
+            <script src="{{ asset('productsTable.js') }}"></script>
+            <div class="js-products"
+                 data-products="{{ products|serialize(format = 'json') }}"
+                 data-categories="{{ categories|serialize(format = 'json') }}"
+            >
+                <table id="productsTable">
+                    <thead>
+                    <tr>
+                        <th data-sort="name">Name</th>
+                        <th data-sort="index">Index</th>
+                        <th data-sort="category">Category</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td colspan="4"><i>Loading...</i></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <button id="prevButton">Previous</button>
+                <button id="nextButton">Next</button>
+            </div>
+
+        {% endblock %}
+    {% endblock %}

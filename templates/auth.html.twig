@@ -1,0 +1,13 @@
+{% block body %}
+    <form method="post" action="{{ path('app_auth_check_password') }}">
+
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="inputPassword">Password</label>
+        <input type="password" name="password" id="inputPassword" class="form-control" required
+               autofocus>
+
+        <button class="btn btn-lg btn-primary" type="submit">
+            Sign in
+        </button>
+    </form>
+{% endblock %}

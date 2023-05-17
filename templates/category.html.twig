@@ -1,0 +1,18 @@
+{% extends "navigation.bar.html.twig" %}
+
+    {% block head %}
+        {{ parent() }}
+    {% endblock %}
+    {% block content %}
+        <div id="content">
+            <form method="post" action="{{ path('app_category_add') }}">
+                <label for="inputCategory">New category</label>
+                <input name="category" id="inputCategory" class="form-control" required
+                       autofocus>
+
+                <button class="btn btn-lg btn-primary" type="submit">
+                    Add
+                </button>
+            </form>
+        </div>
+    {% endblock %}
